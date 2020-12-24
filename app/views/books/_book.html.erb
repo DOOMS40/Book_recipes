@@ -1,0 +1,18 @@
+<% @books.each do |book| %>
+	<h2 class="text-center">
+		<%= link_to  book.name, book_path(book) %>	
+	</h2>
+
+	<p class="text-center">
+		<%= image_tag book.image.url(:large), class: 'img-show' if book.image? %>
+	</p>
+
+	<p>
+		<%= book.genre %> |	
+	
+		<%= link_to "Update", edit_book_path(book) %>	|
+	
+		<%= link_to "Delete", book_path(book), method: :delete, data: { confirm: "Are you shure?" } %>	
+	</p>
+
+<% end %>

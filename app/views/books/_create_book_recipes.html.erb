@@ -1,0 +1,25 @@
+<%= form_for ([ @book, @book.recipes.build ]) do |f| %>	
+				
+	<div class="col-md-12 text-center">
+		<%= f.label :name %>
+	</div>
+
+	<div class="col-md-12 text-center">
+		<%= f.text_field :name, size: '55x30,06' %>
+	</div>
+
+	<div class="col-md-12 text-center">
+		<%= f.label :description %>
+	</div>
+	
+	<div class="col-md-12 text-center">
+		<%= f.text_area :description, size: '55x5' %>
+	</div>
+
+	<div class="col-md-3 col-md-offset-3">
+		<%= f.button "Add Recipe", submit: "", class: "btn btn-default btn-success" %> 
+	</div>
+	<div class="col-md-4 col-md-offset-2">
+		<%= link_to "Back", books_path %>
+	</div>
+<% end %><br>

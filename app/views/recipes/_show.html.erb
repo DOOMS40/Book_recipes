@@ -1,0 +1,19 @@
+<table class="table table-bordered">
+	<tr>
+	
+		<td>
+			<%= @recipe.id %>
+		</td> 
+		
+		<td>
+			<%= @recipe.name %>
+		</td>
+		<td>
+			<%= @recipe.description %>
+		</td>
+		<td>
+			<%= link_to 'Update', edit_recipe_path(@recipe) %> | <%= link_to 'Destroy', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you shure?' } %>
+		</td>
+
+	</tr>
+</table>

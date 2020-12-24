@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		<div class="block">
+
+			<h1 class="book_color text-center">
+				<%= @book.name %>
+			</h1>
+			
+		<% @book.recipes.each do |recipe| %>
+				
+		<h1 class="text-center">
+			<%= recipe.name %>
+		</h1>
+
+		<p class="string_color text-center">
+			<%= recipe.id %> 
+		
+			<%= recipe.description %> 
+		
+		</p>
+		
+		<p class="text-center">
+			<%= link_to 'Add Images', recipe_path(recipe) %>|
+			<%= link_to 'Update', edit_recipe_path(recipe) %> |
+			<%= link_to 'Destroy', recipe_path(recipe), method: :delete, data: { confirm: 'Are you shure?' } %>
+		</p>
+						
+	<% end %>
+		
+		</div>
+
+	</div>
+</div><br>
+
+<div class="container">
+	<div class="row">
+		<h1 class="text-center">
+			Add Recipes
+		</h1>
+		
+		<%= render "create_book_recipes" %>	
+	</div>
+</div>

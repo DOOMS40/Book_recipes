@@ -1,0 +1,33 @@
+<%= form_for :recipe, url: recipe_path(@recipe), method: :put do |f| %>
+	<div class="col-md-12 text-center">
+		<%= f.label :name, 'Edit  Name:' %>
+	</div>
+
+	<div class="col-md-12 text-center">
+		<%= f.text_field :name, size: '55x30,06' %><br>
+	</div>
+
+	<div class="col-md-12 text-center">
+		<%= f.label :description, 'Edit Description:' %>
+	</div>
+	
+	<div class="col-md-12 text-center">
+		<%= f.text_area :description, size: '55x5' %> <br>
+	</div>
+
+	<div class="col-md-12 text-center">
+		<%= f.label :datetime, 'Edit Date and Time:' %>
+	</div>
+	
+	<div class="col-md-12 text-center">
+		<%= select_datetime(Date.today, start_year: 2015, end_year: 2050) %> <br>
+	</div>
+
+	<div class="col-md-3 col-md-offset-3">
+		<%= f.submit 'Save Update', class: "btn btn-md btn-success" %>
+	</div>
+	
+	<div class="col-md-3 col-md-offset-3">
+		<%= link_to "Back", @recipe.book %>
+	</div>
+<% end %>

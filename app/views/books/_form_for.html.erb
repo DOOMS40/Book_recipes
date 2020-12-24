@@ -1,0 +1,43 @@
+<%= form_for @book, html: { multipart: true } do |f| %>
+	<% if @book && @book.errors.any? %>
+		<p>
+			<ul>
+				<% @book.errors.full_messages.each do |msg|%>
+				<li>
+					<%= msg %>
+				</li>
+				<% end %>
+			</ul>
+		</p>
+	<% end %>
+
+	<table class="table table-bordered">
+		<tr>
+			<td class="col-md-1">
+				<%= f.label :name %>
+			</td>
+			
+			<td class="col-md-5">
+				<%= f.text_field :name, size: "55x36,05", autofocuse: true %>
+			</td>
+
+			<td class="col-md-1">
+				<%= f.select :genre, options_for_select(Book.genres.map {|k, v| [k.humanize.capitalize, v]}) %>
+			</td>
+
+			<td class="col-md-2">
+				<%= f.file_field :image %>
+			</td>
+			
+			<td class="col-md-2">
+				<%= f.submit 'Create Book' %>
+			</td>
+			<td class="col-md-1">
+				<%= link_to 'Back', books_path, id: "back" %>
+			</td>
+
+		</tr>
+		
+	</table>
+<% end %>
+

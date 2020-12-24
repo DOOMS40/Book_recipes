@@ -1,0 +1,14 @@
+<%= form_for @recipe, url: show_img_path(@recipe), method: :post do |f| %>
+	
+	<div class="col-md-4">
+		<%= f.file_field :images %>
+	</div>
+	
+	<div class="col-md-6">
+		<%= f.text_area :description %>
+	</div>
+
+	<div class="col-md-2">
+		<%= f.submit 'Add Image' %>
+	</div>
+<% end %>		
