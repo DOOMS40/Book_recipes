@@ -7,6 +7,7 @@ class BooksController < ApplicationController
 
   def show
     book_find
+    @recipes = @book.recipes.page(params[:page])
   end
 
   def new

@@ -5,8 +5,8 @@
 			<h1 class="book_color text-center">
 				<%= @book.name %>
 			</h1>
-			
-		<% @book.recipes.each do |recipe| %>
+			<%= paginate @recipes %>
+		<% @recipes.each do |recipe| %>
 				
 		<h1 class="text-center">
 			<%= recipe.name %>
@@ -16,6 +16,9 @@
 			<%= recipe.id %> 
 		
 			<%= recipe.description %> 
+			<% recipe.recipe_images.each do |image| %>
+				<%=  image_tag image.image.url(:medium) %>
+			<% end %>
 		
 		</p>
 		

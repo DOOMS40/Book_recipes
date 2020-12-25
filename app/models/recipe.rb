@@ -6,6 +6,6 @@ class Recipe < ApplicationRecord
   validates :name, presence: true, length: { minimum: 3 }
   validates :description, presence: true
   
-  paginates_per 5
+  paginates_per 2
   max_paginates_per 100
 end
